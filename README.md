@@ -1,4 +1,4 @@
-# Ecommerce Web Performance & Purchase Behavior Analysis
+# Ecommerce Web Performance & Purchase Behavior Analysis | SQL
 
 ## Tools Used
 
