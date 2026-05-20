@@ -107,7 +107,7 @@ To keep the result focused on meaningful traffic sources, the query filters for 
 
 **Result**
 
-![Uploading image.png…]()
+<img width="1183" height="255" alt="Screenshot 2026-05-20 130852" src="https://github.com/user-attachments/assets/69b30d5e-fb68-4c2b-bd9c-8de5754b6770" />
 
 
 ### Query 05: Average Pageviews by Purchaser Type
@@ -118,7 +118,7 @@ Purchasers are users with at least one transaction and non-null product revenue.
 
 **Result**
 
-<img width="1030" height="224" alt="image" src="https://github.com/user-attachments/assets/c97579dc-ea16-4c45-8251-0244bac5417a" />
+<img width="959" height="209" alt="image" src="https://github.com/user-attachments/assets/7c064cad-d120-4f25-8423-0795570f0737" />
 
 ### Query 06: Average Transactions per Purchasing User
 
@@ -128,7 +128,7 @@ The metric is calculated by dividing total transactions by the number of unique 
 
 **Result**
 
-<img width="732" height="114" alt="image" src="https://github.com/user-attachments/assets/3ae02362-ce5d-4d0c-9a78-273cd4a37166" />
+<img width="958" height="157" alt="image" src="https://github.com/user-attachments/assets/c73277a0-7191-4e9e-8213-a3e03258f497" />
 
 ### Query 07: Revenue Contribution by Device
 
@@ -138,7 +138,7 @@ The ratio shows how much each device contributes to overall revenue, helping eva
 
 **Result**
 
-<img width="717" height="375" alt="image" src="https://github.com/user-attachments/assets/5679433c-60cd-4f1b-8276-7c1207abf28d" />
+<img width="1216" height="248" alt="image" src="https://github.com/user-attachments/assets/202e28a2-12ee-400d-96e0-124bb0755c01" />
 
 ### Query 08: Other Products Purchased with YouTube Men's Vintage Henley
 
@@ -148,7 +148,7 @@ The query first creates a buyer list using distinct `fullVisitorId`, then joins 
 
 **Result**
 
-<img width="1343" height="169" alt="image" src="https://github.com/user-attachments/assets/7f9911b1-7409-48ad-8c18-43ad9851b599" />
+<img width="974" height="692" alt="image" src="https://github.com/user-attachments/assets/8fb0b56c-d92e-4196-b3f3-31cfb0d3d2c1" />
 
 ### Query 09: Product View to Add-to-Cart and Purchase Funnel
 
@@ -158,7 +158,7 @@ The funnel uses ecommerce action types: `2` for product view, `3` for add to car
 
 **Result**
 
-_Result screenshot will be added here._
+<img width="1468" height="194" alt="image" src="https://github.com/user-attachments/assets/90f04f00-5462-475a-a29d-fa543ae0292b" />
 
 ### Query 10: Weekly Revenue and Cumulative Revenue
 
@@ -167,8 +167,8 @@ This query calculates weekly revenue from May to July 2017 and uses a window fun
 The cumulative revenue column shows the running total of revenue by week, which helps track revenue growth across the analysis period.
 
 **Result**
+<img width="974" height="691" alt="image" src="https://github.com/user-attachments/assets/aed5ca48-9450-428c-b817-6a3841f4cd3f" />
 
-_Result screenshot will be added here._
 
 ## SQL Techniques
 
@@ -183,21 +183,21 @@ The project uses the following SQL techniques:
 - Window functions for cumulative revenue.
 - Revenue normalization by dividing `product.productRevenue` by `1000000`.
 
-## Key Takeaways
 
-Based on the expected outputs in the project instruction sheet:
+## Conclusion
 
-- March 2017 had the highest visits and transactions among the first three months of 2017.
-- Google and direct traffic were among the largest traffic sources in July 2017.
-- Direct traffic contributed strongly to June 2017 revenue.
-- Desktop generated the majority of 2017 revenue compared with mobile and tablet.
-- The product funnel from product view to add to cart and purchase improved from January to March 2017.
-- Weekly cumulative revenue from May to July 2017 shows how revenue builds over time.
+Website performance improved in March 2017, which had the highest visits, pageviews, and transactions in Q1. Google and direct traffic were the largest traffic sources, but some high-volume channels also had high bounce rates.
 
-## Notes
+Revenue was mainly driven by direct traffic and desktop users. Desktop contributed 96.41% of total revenue, while mobile and tablet contributed only a small share. The product funnel also improved from January to March, with both add-to-cart rate and purchase rate increasing over time.
 
-- Queries that use product-level revenue must unnest both `hits` and `hits.product`.
-- For purchase and revenue analysis, filter with `product.productRevenue IS NOT NULL`.
-- `product.productRevenue` is stored in micros, so it is divided by `1000000`.
-- `SAFE_DIVIDE` is used to avoid division-by-zero errors when calculating rates.
+Overall, the analysis shows that traffic volume, traffic quality, device experience, and funnel efficiency all play important roles in e-commerce performance.
+
+## Recommendations
+
+- Improve landing pages for high-bounce sources such as YouTube, Google, and mobile Facebook.
+- Prioritize high-converting channels such as DFA and direct traffic.
+- Review the mobile shopping and checkout experience to increase mobile revenue contribution.
+- Investigate why non-purchasers view many more pages but do not convert.
+- Use product recommendations for common co-purchased items such as Google Sunglasses and related apparel.
+- Continue tracking funnel metrics and weekly cumulative revenue to monitor performance changes.
 
