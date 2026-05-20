@@ -130,7 +130,7 @@ GROUP BY month;
 WITH revenue_by_device AS (
     SELECT
         device.deviceCategory AS device,
-        SUM(product.productRevenue) / 1000000 AS revenue_by_device
+        SUM(product.productRevenue) / 1000000 AS device_revenue
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
     CROSS JOIN UNNEST(hits) AS hits
     CROSS JOIN UNNEST(hits.product) AS product
@@ -139,19 +139,21 @@ WITH revenue_by_device AS (
         AND product.productRevenue IS NOT NULL
     GROUP BY device
 ),
-revenue_summary AS (
+total_revenue AS (
     SELECT
-        device,
-        revenue_by_device,
-        SUM(revenue_by_device) OVER () AS total_revenue
+        SUM(device_revenue) AS total_revenue
     FROM revenue_by_device
 )
 SELECT
-    device,
-    ROUND(revenue_by_device, 2) AS revenue_by_device,
-    ROUND(total_revenue, 2) AS total_revenue,
-    ROUND(SAFE_DIVIDE(revenue_by_device, total_revenue) * 100, 2) AS ratio
-FROM revenue_summary
+    revenue_by_device.device,
+    ROUND(revenue_by_device.device_revenue, 2) AS revenue_by_device,
+    ROUND(total_revenue.total_revenue, 2) AS total_revenue,
+    ROUND(
+        SAFE_DIVIDE(revenue_by_device.device_revenue, total_revenue.total_revenue) * 100,
+        2
+    ) AS ratio
+FROM revenue_by_device
+CROSS JOIN total_revenue
 ORDER BY ratio DESC;
 
 
@@ -220,7 +222,7 @@ ORDER BY month;
 
 
 -- Query 10: Calculate revenue by week from May to July 2017 and cumulative revenue
-WITH weekly_revenue AS (
+WITH weekly_revenue_data AS (
     SELECT
         FORMAT_DATE('%Y-%W', PARSE_DATE('%Y%m%d', date)) AS week,
         SUM(product.productRevenue) / 1000000 AS weekly_revenue
@@ -235,5 +237,5 @@ SELECT
     week,
     ROUND(weekly_revenue, 2) AS weekly_revenue,
     ROUND(SUM(weekly_revenue) OVER (ORDER BY week), 2) AS cumulative_revenue
-FROM weekly_revenue
+FROM weekly_revenue_data
 ORDER BY week;
