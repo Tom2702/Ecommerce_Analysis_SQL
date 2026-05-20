@@ -77,7 +77,7 @@ The query uses `FORMAT_DATE` and `PARSE_DATE` to convert the raw `date` field in
 
 **Result**
 
-<img width="1337" height="379" alt="image" src="https://github.com/user-attachments/assets/2756a2ab-8b72-4a4b-9660-06c44ac42cc4" />
+<img width="1216" height="243" alt="image" src="https://github.com/user-attachments/assets/5394b37e-5baf-454e-aacc-4221760a2d53" />
 
 ### Query 02: Bounce Rate by Traffic Source
 
@@ -87,7 +87,7 @@ This analysis helps identify which traffic sources brought users who left the we
 
 **Result**
 
-<img width="1144" height="724" alt="image" src="https://github.com/user-attachments/assets/816fee0c-b054-48b7-8055-35cb091593fd" />
+<img width="1194" height="690" alt="image" src="https://github.com/user-attachments/assets/79d4deaf-0c24-492a-b8e2-86c4a6b2b8e2" />
 
 ### Query 03: Revenue by Traffic Source by Month and Week
 
@@ -97,7 +97,7 @@ Because revenue is stored inside the nested product field, the query uses `UNNES
 
 **Result**
 
-<img width="1103" height="473" alt="image" src="https://github.com/user-attachments/assets/8ae31782-86eb-426a-b9b7-6bbe423648c6" />
+<img width="1312" height="690" alt="Screenshot 2026-05-20 130804" src="https://github.com/user-attachments/assets/b563e9fa-ee0a-4b6f-a43c-4427cc9c124f" />
 
 ### Query 04: Conversion Rate by Traffic Source
 
@@ -105,7 +105,9 @@ This query calculates the conversion rate by traffic source in 2017. Conversion 
 
 To keep the result focused on meaningful traffic sources, the query filters for sources with at least 50 transactions and orders the output by conversion rate in descending order.
 
-<img width="1025" height="229" alt="image" src="https://github.com/user-attachments/assets/823ec9b6-c4c4-40c4-a0c3-9d41999a9812" />
+**Result**
+
+![Uploading image.png…]()
 
 
 ### Query 05: Average Pageviews by Purchaser Type
