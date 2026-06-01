@@ -492,18 +492,6 @@ ORDER BY week;
 | Google Sunglasses and related apparel were commonly purchased with `YouTube Men's Vintage Henley`. | Use product recommendation modules or bundles for common co-purchased products. |
 | Add-to-cart and purchase rates improved from January to March. | Continue tracking funnel metrics monthly and use funnel movement as an early signal of ecommerce performance. |
 
-## SQL Techniques
-
-The project uses the following SQL techniques:
-
-- Wildcard tables with `_TABLE_SUFFIX` for date-range filtering.
-- Date parsing and formatting with `PARSE_DATE` and `FORMAT_DATE`.
-- Nested data handling with `UNNEST(hits)` and `UNNEST(hits.product)`.
-- Conditional aggregation with `COUNT(CASE WHEN ... THEN ... END)`.
-- Safe division with `SAFE_DIVIDE`.
-- Joins for combining purchaser and non-purchaser metrics.
-- Window functions for cumulative revenue.
-- Revenue normalization by dividing `product.productRevenue` by `1000000`.
 
 ## How to Run the Project
 
