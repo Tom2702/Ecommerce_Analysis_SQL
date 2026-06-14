@@ -39,14 +39,6 @@ The dataset contains session-level Google Analytics data from the Google Merchan
 | `product.productQuantity` | Quantity purchased. |
 | `product.productRevenue` | Product revenue, divided by `1000000` for readable values. |
 
-## Repository Structure
-
-```text
-Ecommerce_Analysis_SQL/
-|-- Ecommerce Analysis.sql
-`-- README.md
-```
-
 ## Analytics
 
 Each analysis includes the business question, SQL query, result screenshot, and key insight.
