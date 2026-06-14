@@ -484,26 +484,6 @@ ORDER BY week;
 | Google Sunglasses and related apparel were commonly purchased with `YouTube Men's Vintage Henley`. | Use product recommendation modules or bundles for common co-purchased products. |
 | Add-to-cart and purchase rates improved from January to March. | Continue tracking funnel metrics monthly and use funnel movement as an early signal of ecommerce performance. |
 
-
-## How to Run the Project
-
-1. Open Google BigQuery.
-2. Use the public dataset `bigquery-public-data.google_analytics_sample.ga_sessions_*`.
-3. Open `Ecommerce Analysis.sql`.
-4. Run each query independently.
-5. Compare the query outputs with the result screenshots in this README.
-
-## Tech Stack
-
-- Google BigQuery
-- SQL
-- Window Functions
-- CTEs
-- Nested and Repeated Fields
-- Ecommerce Analytics
-- Web Performance Analysis
-- Purchase Funnel Analysis
-
 ## Outcome
 
 The final analysis provides a structured view of ecommerce traffic, engagement, conversion, revenue contribution, device performance, co-purchase behavior, and funnel movement. It supports channel optimization, product recommendation planning, mobile experience review, and ongoing revenue monitoring.
